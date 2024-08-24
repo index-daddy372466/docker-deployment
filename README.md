@@ -1,9 +1,21 @@
 # Deploying an Application inside of a Docker-Container
 
+## Build, & Test Application 
+Before sending an application to the container, we must **CREATE the application**
+
+Whichever framework is used, remember to:
+1. Build, test and deploy your app locally
+2. Ensure that a server and a port exist in your app (index.js, app.js, server.js, etc...)
+
+
 ## Create the Dockerfile
 A Dockerfile is a text file with no file extension listed.
 The purpose of Dockerfile is to run all the commands needed to run the application.
-- i.e.: ```WORKDIR [./dir], COPY [./source] [./destination] , RUN [npm install ./]```
+
+Examples: 
+```
+WORKDIR [./dir], COPY [./source] [./destination] ,RUN [npm install ./]
+```
 
 **Do you remember making sandwich at home and taking it to work/school to eat?**
 
@@ -47,3 +59,58 @@ This is not your local machine. This is the Docker Container's file system.
 
 In summary of the Dockerfile, You are importing your local application to a **Docker Container** via the Dockerfile.
  
+
+ ## Build the Container
+
+Once the __Dockerfile__ is setup: 
+1. review the Dockerfile again and compare it to your local directory to mitigate any potential mistakes.
+2. Build your container with the command: 
+```
+docker build -t /[username]/[projectname] [local directory]
+```
+Example:
+```
+docker build -t /usr/app .
+```
+
+A successful build is displayed in the terminal with "0" (zero) errors.
+An example can be seen below.
+Depending on the size of your project, your container can build from a few seconds to a few minutes.
+
+<img src="./media/dockerplay.png" >
+
+
+ ## Run the Container
+Run the container using ```docker run``` CMD
+Example:
+```
+docker run -p [public port]:[server port] /[username]/[projectname]
+```
+Example:
+```
+docker run -p 6786:9998 /usr/app
+```
+Running the docker container is synonymous to running the server on your local machine.
+Keep in mind, that the output originated from my local **app.js**, server file. 
+Port **9888** is mapped from the public port, **6786**.
+
+In reality, we can access the server via **6786** on any browser on the current machine.
+
+<img src="./media/dockerrun.png" >
+
+- Open the application and DEV
+
+
+In conclusion,
+Running a docker container is good practice when isolating the application from the dependencies. The process can seem like a challenge if the process is not done thoroughly and carefully.
+
+While there is an abundance of ways we can take our Docker Containerization further, remember to:
+1. Build & Test the Application 
+2. Create the Dockerfile
+3. Build the Container
+4. Run the Container
+
+
+
+
+
