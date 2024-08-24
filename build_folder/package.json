@@ -1,0 +1,17 @@
+{
+ "author": "Kyle Anthony",
+ "main": "server/index.js",
+ "name": "build_folder",
+ "version": "1.0.0",
+ "scripts": {
+  "start": "nodemon server/app.js",   
+  "test": "echo \"Error: no test specified\" && exit 1"
+ },
+ "keywords": [],
+ "license": "ISC",
+ "description": "",
+ "devDependencies": {
+  "express": "^4.19.2",
+  "nodemon": "^3.1.4"
+ }
+}
