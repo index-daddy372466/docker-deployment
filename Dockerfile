@@ -1,7 +1,7 @@
 # Base Image
 FROM node:14-alpine
 
-WORKDIR /usr/app
+WORKDIR /usr/deployment
 # install dependencies
 
 # copy package.json
