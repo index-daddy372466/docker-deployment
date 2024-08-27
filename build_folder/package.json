@@ -1,17 +1,28 @@
 {
  "author": "Kyle Anthony",
  "main": "server/index.js",
- "name": "build_folder",
+ "name": "Authentication Server",
+ "private": "true",
  "version": "1.0.0",
  "scripts": {
-  "start": "nodemon server/app.js",   
+  "start": "nodemon server/app.js",
   "test": "echo \"Error: no test specified\" && exit 1"
  },
  "keywords": [],
  "license": "ISC",
  "description": "",
  "devDependencies": {
+  "cookie-parser": "^1.4.6",
+  "cors": "^2.8.5",
+  "dotenv": "^16.4.5",
+  "ejs": "^3.1.10",
   "express": "^4.19.2",
-  "nodemon": "^3.1.4"
+  "express-session": "^1.18.0",
+  "http-proxy-middleware": "^3.0.0",
+  "memorystore": "^1.6.7",
+  "nodemon": "^3.1.4",
+  "passport": "^0.7.0",
+  "passport-local": "^1.0.0",
+  "passport-session": "^1.0.2"
  }
 }
